@@ -1,0 +1,175 @@
+.advantages {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 43px;
+    }
+
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        width: 526px;
+
+        @include mobile {
+            width: 100%;
+        }
+
+    }
+
+    &__title {
+        display: flex;
+        column-gap: 30px;
+        white-space: nowrap;
+
+        &-icon {
+            min-width: 70px;
+            min-height: 70px;
+            position: relative;
+        }
+
+        &-icon[data-one] {
+            svg:not(:first-child) {
+                color: red;
+                position: absolute;
+                left: 16%;
+                top: 38%;
+                translate: -52%;
+            }
+        }
+
+        &-icon[data-two] {
+            svg:nth-child(2) {
+                color: red;
+                position: absolute;
+                left: 49%;
+                top: 35%;
+                translate: -50%;
+            }
+        }
+
+        &-icon[data-three] {
+            svg:nth-child(2) {
+                color: red;
+                position: absolute;
+                left: 11%;
+                top: 21%;
+                translate: -50%;
+            }
+        }
+
+        &-text {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 0.05rem;
+            text-transform: uppercase;
+        }
+
+        @include mobile {
+            white-space: wrap;
+        }
+
+    }
+
+    &__description {
+        font-size: 24px;
+        font-weight: 500;
+        letter-spacing: 0.03rem;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+
+    &__division {
+        @extend .achievments__division;
+        align-self: center;
+        &-item {
+            @extend .achievments__division-item; 
+        }
+    }
+
+    &__slider {
+        width: 636px;
+
+        @include mobile {
+            width: 90%;
+        }
+
+        &-item {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 50px;
+
+            @include mobile {
+                width: 100%;
+            }
+
+
+            p {
+                width: 422px;
+                letter-spacing: 0.05rem;
+                font-size: 18px;
+                font-weight: 600;
+                text-transform: uppercase;
+                text-align: center;
+                line-height: 25px;
+
+                @include mobile {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-item.isActive {
+            display: flex;
+        }
+
+        &-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            top: 90%;
+
+            button {
+                width: 50px;
+                aspect-ratio: 1;
+                background-color: transparent;
+                border: 2px solid var(--color-accent);
+                rotate: 45deg;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include hover {
+                    background-color: var(--color-accent);
+                    opacity: 0.5;
+                    cursor: pointer;
+
+                    svg {
+                        color: var(--color-dark);
+                    }
+                }
+
+                svg {
+                    rotate: -45deg;
+                    color: var(--color-light);
+                }
+
+            }
+        }
+    }
+
+}

@@ -1,0 +1,191 @@
+.contact-us {
+    @extend .services;
+
+    &__title {
+        @extend .services__title;
+    }
+
+    &__division {
+        @extend .services__division;
+        margin-bottom: 60px;
+
+        &-item {
+            @extend .services__division-item; 
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include mobile {
+            width: 80%;
+        }
+    }
+
+    &__inputs {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        @include mobile {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &-input {
+            width: 306px;
+            height: var(--input-height);
+            background-color: transparent;
+            border: 1px solid var(--color-gray);
+            padding-inline: 25px;
+            color: var(--color-light);
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.05rem;
+
+            @include hover {
+                border-color: var(--color-accent);
+            }
+
+            &:focus {
+                border-color: var(--color-accent);
+                outline: none;
+            }
+
+            &::placeholder {
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 0.05rem;
+                text-transform: uppercase;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+
+        }
+    }
+
+    &__message {
+        display: flex;
+        align-items: center;
+        gap: 70px;
+
+        @include mobile {
+            display: contents;
+        }
+
+        &-textarea {
+            @extend .contact-us__inputs-input;
+            padding-top: 15px;
+            width: 100%;
+            height: 150px;
+            resize: none;
+        }
+
+        &-soc1als {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            @include mobile {
+                flex-direction: row;
+                align-self: center;
+                order: 2;
+            }
+
+            a {
+                @include square(40px);
+                @include flex-center;
+                border: 1px solid var(--color-gray);
+
+                @include hover {
+                    border-color: var(--color-accent);
+                    svg {
+                        color: var(--color-accent);
+
+                    }
+                }
+            }
+        }
+    }
+
+    &__submit {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+
+        &-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+
+            @include mobile {
+                order: 3;
+                align-self: center;
+            }
+
+            a {
+                @include hover {
+                    color: var(--color-accent);
+                    svg {
+                    color: var(--color-accent);
+                    }
+                }
+            }
+            
+            svg {
+                margin-right: 10px;
+            }
+        }
+
+        &-address {
+            font-style: normal;
+        }
+
+        &-contacts {
+            display: flex;
+            gap: 30px;
+        }
+
+        &-button {
+            height: var(--button-height);
+            background-color: transparent;
+            border: 1px solid var(--color-accent);
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.05rem;
+            color: var(--color-light);
+            text-transform: uppercase;
+            padding: 20px;
+            @include flex-center;
+            transition-duration: 0.3s;
+            cursor: pointer;
+
+            @include hover {
+                background-color: var(--color-accent);
+            }
+
+            &:active {
+                scale: 0.95;
+            }
+
+            @include mobile {
+                order: 1;
+            }
+        }
+
+        @include mobile {
+            display: contents;;
+        }
+    }
+
+
+}

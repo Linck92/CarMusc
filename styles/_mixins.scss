@@ -1,0 +1,72 @@
+/*
+    $max and $min это аргументы кторые будут прописываться позже при @include,
+    48 и 16 значения по умолчанию, хоть и не указнны единицы, мы для себя подразумеваем что они в px 
+    для удобства в вычислениях. ообще перменную можно задать без значения по умолчанию (см. Последний mixin)
+    и уже когда будем применять mixin м укажем значение с единицами измерения
+    */
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
+}
+/*
+        тут переменным нужно присвоить разные единицы измерения и произвести расчеты, 
+        поэтому мы ставим # { $ перемнная } единицы измерения. Мы могли бы оставить конструкцию 
+        # { $перемнная }единицы измерения только для центральной части, но тогда min и max 
+        у нас будут с px, а центральное значеие с vwpx. В итоге мы это испоьзуем,
+        чтобы задать единицы измерения конкретной переменной, кторая будет вводится 
+        просто числом. КОРОЧЕ, ЗАПОМНИ, ЧТО ЭТО ДЕЛЕТСЯ ТАК
+        */
+
+@mixin reset-link {
+  //сбрасываем цвет ссылки, и цыет ссылки при наведении
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin reset-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    // проверяем, если isInline = true, то display: inline-flex;
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin square($size) {
+  // Будет задавать пропорции 1:1
+  width: $size;
+  aspect-ratio: 1;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+

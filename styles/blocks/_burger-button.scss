@@ -1,0 +1,36 @@
+.burger-button {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+    row-gap: 8px;
+    width: 55px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    @include mobile {
+        justify-items: end;
+    }
+
+    @include hover {
+        .burger-button__line:nth-child(1),
+        .burger-button__line:nth-child(3) {
+            align-self: flex-start;
+        }
+        .burger-button__line:nth-child(2) {
+            align-self: flex-end;
+        }
+    }
+
+    &__line {
+        width: 40px;
+        height: 3px;
+        background-color: var(--color-accent);
+
+        &:nth-child(2) {
+            align-self: flex-start;
+        }
+    }
+}

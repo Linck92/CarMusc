@@ -1,0 +1,70 @@
+.ourworks {
+    @extend .services;
+
+    &__title {
+        @extend .services__title;
+    }
+
+    &__division {
+        @extend .services__division;
+        margin-bottom: 60px;
+
+        &-item {
+            @extend .services__division-item; 
+        }
+    }
+
+}
+
+
+.ourworks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__examples {
+       display: grid;
+       grid-template-columns: repeat(auto-fill, 320px); //если есть auto-fill то должна быть ширина лучше max-width
+       max-width: 100%; //именно max-width
+    
+        div {
+            height: 280px;
+        }
+    
+        div:nth-child(1),
+        div:nth-child(12),
+        div:nth-child(13) {
+            background-image: url(../images/ourWoksTwo/Rectangle\ 56.png);
+        }
+    
+        div:nth-child(2),
+        div:nth-child(11),
+        div:nth-child(14) {
+            background-image: url(../images/ourWoksTwo/Rectangle\ 57.png);
+        }
+    
+        div:nth-child(3),
+        div:nth-child(10),
+        div:nth-child(15) {
+            background-image: url(../images/ourWoksTwo/Rectangle\ 58.png);
+        }
+    
+        div:nth-child(4),
+        div:nth-child(9),
+        div:nth-child(16) {
+            background-image: url(../images/ourWoksTwo/Rectangle\ 59.png);
+        }
+    
+        div:nth-child(5),
+        div:nth-child(8),
+        div:nth-child(17) {
+            background-image: url(../images/ourWoksTwo/Rectangle\ 60.png);
+        }
+    
+        div:nth-child(6),
+        div:nth-child(7),
+        div:nth-child(18) {
+            background-image: url(../images/ourWoksTwo/Rectangle\ 61.png);
+        }
+    }
+}

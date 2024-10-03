@@ -1,0 +1,34 @@
+:root {
+--color-dark: #000000;
+--color-light: #ffffff;
+--color-accent: #DB3138;
+--color-gray: #898989;
+
+--font-family-base: 'Reforma Grotesk', sans-serif;
+
+--container-width: 1300px;
+--container-padding-x: 20px;
+/*Значение в мобильной версии*/
+
+--section-padding-y: 90px;
+/*между секциями по макету 180, это по 90px снизу одной секции и сверху другой*/
+
+--input-height: 47px;
+--button-height-big: 75px;
+--button-height: 61px;
+--button-height-samll: 41px;
+
+--transition-duration: 0.3s;
+
+@include desktop {
+    --section-padding-y: 50px;
+}
+
+@include mobile {
+    --section-padding-y: 30px;
+}
+
+}
+
+
+

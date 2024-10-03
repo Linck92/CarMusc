@@ -1,0 +1,116 @@
+.first-section {
+
+    &__body {
+        @include flex-center;
+        flex-direction: column;
+        row-gap: 40px;
+        margin-bottom: 103px;
+        margin-top: 168px;
+
+        @include mobile {
+            margin-block: 75px;
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 150px;
+        font-weight: 700;
+        color: var(--color-accent);
+        line-height: 1;
+
+        @include mobile {
+            font-size: 100px;
+        }
+    }
+
+    &__division {
+        display: flex;
+        column-gap: 30px;
+
+        &-item {
+            width: 10px;
+            aspect-ratio: 1;
+            background-color: var(--color-accent);
+            rotate: -45deg;
+        }
+    }
+
+    &__description {
+        text-align: center;
+        font-size: 40px;
+        line-height: 48px;
+        font-weight: 500;
+
+        @include mobile {
+            font-size: 27px;
+            line-height: 1;
+        }
+    }
+
+    &__link {
+        width: 144px;
+        height: var(--button-height);
+        @include flex-center;
+        text-transform: uppercase;
+        font-weight: 600;
+        white-space: nowrap;
+        border: 1px solid var(--color-accent);
+
+        @include hover {
+            background-color: var(--color-accent);
+        }
+    }
+
+    &__footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        border-bottom: 1px solid var(--color-gray);
+        border-top: 1px solid var(--color-gray);
+        text-align: center;
+        font-weight: 600;
+
+        address,
+        div {
+            width: 100%;
+            padding-block: 43px;
+
+            @include mobile {
+                padding-block: 10px;
+            }
+        }
+
+        p:first-child {
+            font-size: 18px;
+        }
+
+        p:not(:first-child) {
+            color: var(--color-accent);
+
+            @include mobile {
+                font-size: 16px;
+            }
+        }
+
+        p {
+            font-style: normal;
+            text-transform: uppercase;
+        }
+
+        a {
+            @include hover {
+                color: var(--color-light);
+            }
+        }
+
+        &-phones {
+            border-right: 1px solid var(--color-gray);
+            border-left: 1px solid var(--color-gray);
+            padding-block: 43px;
+        }
+    }
+
+
+}

@@ -1,0 +1,163 @@
+.services {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        @extend .achievments__title;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &__division {
+        @extend .achievments__division;
+        align-self: center;
+        &-item {
+            @extend .achievments__division-item; 
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        margin-top: 60px;
+        margin-bottom: 80px;
+        column-gap: 60px;
+
+        button {
+            width: 181px;
+            height: var(--button-height-big);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 32px;
+            font-weight: 600;
+            white-space: nowrap;
+            border: none;
+            color: var(--color-light);
+            background-color: transparent;
+
+            &:not(:has(.current)) {
+                border: 1px solid var(--color-accent)
+            }
+
+            @include hover {
+                cursor: pointer;
+                background-color: var(--color-accent);
+            }
+
+            &.current {
+            background-color: var(--color-accent);
+            }
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        &-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-inline: 40px;
+            padding-top: 86px;
+            padding-bottom: 50px;
+            row-gap: 25px;
+            border: 1px solid var(--color-gray);
+            text-transform: uppercase;
+            width: 307px;
+            height: 452px;
+
+            @include mobile {
+                padding-block: 15px;
+                height: auto;
+            }
+
+        }
+
+        &-icon {
+            min-width: 70px;
+            min-height: 70px;
+            position: relative;
+        }
+
+        &-icon[data-one] {
+            svg:not(:first-child) {
+                color: red;
+                position: absolute;
+                left: 16%;
+                top: 41%;
+                translate: -52%;
+            }
+        }
+
+        &-icon[data-two] {
+            svg:nth-child(2) {
+                color: red;
+                position: absolute;
+                left: 49%;
+                top: 35%;
+                translate: -50%;
+            }
+        }
+
+        &-icon[data-three] {
+            svg:nth-child(2) {
+                color: red;
+                position: absolute;
+                color: red;
+                position: absolute;
+                left: 11%;
+                top: 21%;
+                translate: -50%;
+            }
+        }
+
+        &-icon[data-four] {
+            svg:nth-child(2) {
+                color: red;
+                position: absolute;
+                left: 59%;
+                top:38%;
+            }
+        }
+
+        &-title {
+            font-size: 24px;
+        }
+
+        &-description {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.05rem;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 93px;
+            height: var(--button-height-small);
+            border: 1px solid var(--color-accent);
+            font-size: 18px;
+            font-weight: 600;
+            padding-inline: 20px;
+            padding-top: 10px;
+            padding-bottom: 6px;
+            letter-spacing: 0.05rem;
+
+            @include hover {
+                background-color: var(--color-accent);
+            }
+
+        }
+    }
+
+}
